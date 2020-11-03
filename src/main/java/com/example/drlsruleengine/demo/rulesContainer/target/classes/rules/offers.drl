@@ -1,6 +1,6 @@
 package rules;
-global com.example.drlsruleengine.demo.Fare rideFare;
-import com.example.drlsruleengine.demo.TaxiRide;
+global com.example.drlsruleengine.demo.ruleModels.Fare rideFare;
+import com.example.drlsruleengine.demo.ruleModels.TaxiRide;
 
 dialect  "mvel"
 

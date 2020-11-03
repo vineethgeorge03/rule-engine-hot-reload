@@ -1,6 +1,9 @@
 package com.example.drlsruleengine.demo;
 
 import com.example.drlsruleengine.demo.config.DroolsConfig;
+import com.example.drlsruleengine.demo.ruleModels.Fare;
+import com.example.drlsruleengine.demo.ruleModels.TaxiRide;
+import com.example.drlsruleengine.demo.services.TaxiFareCalculatorServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TaxiFareCalculatorServiceTest {
 
     @Autowired
-    TaxiFareCalculatorService taxiFareCalculatorService;
+    TaxiFareCalculatorServiceImpl taxiFareCalculatorService;
 
     @Test
     public void rulesTest() {

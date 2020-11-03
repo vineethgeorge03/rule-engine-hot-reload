@@ -1,6 +1,8 @@
-package com.example.drlsruleengine.demo;
+package com.example.drlsruleengine.demo.services;
 
 import com.example.drlsruleengine.demo.eventListeners.TrackingAgendaEventListener;
+import com.example.drlsruleengine.demo.ruleModels.Fare;
+import com.example.drlsruleengine.demo.ruleModels.TaxiRide;
 import org.kie.api.event.rule.AgendaEventListener;
 import org.kie.api.event.rule.DebugRuleRuntimeEventListener;
 import org.kie.api.runtime.KieContainer;
@@ -13,8 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-
-public class TaxiFareCalculatorService {
+public class TaxiFareCalculatorServiceImpl implements  TaxiFareCalculatorService{
 
     @Autowired
     private KieContainer kieContainer;

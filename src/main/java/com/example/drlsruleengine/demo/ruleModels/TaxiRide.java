@@ -1,4 +1,4 @@
-package com.example.drlsruleengine.demo;
+package com.example.drlsruleengine.demo.ruleModels;
 
 public class TaxiRide {
     private Boolean isNightSurcharge;

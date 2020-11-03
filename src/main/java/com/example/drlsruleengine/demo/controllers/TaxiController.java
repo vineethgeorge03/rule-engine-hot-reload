@@ -1,9 +1,12 @@
-package com.example.drlsruleengine.demo;
+package com.example.drlsruleengine.demo.controllers;
 
+import com.example.drlsruleengine.demo.ruleModels.Fare;
+import com.example.drlsruleengine.demo.services.TaxiFareCalculatorService;
+import com.example.drlsruleengine.demo.services.TaxiFareCalculatorServiceImpl;
+import com.example.drlsruleengine.demo.ruleModels.TaxiRide;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +16,7 @@ public class TaxiController {
     @Autowired
     TaxiFareCalculatorService taxiFareCalculatorService;
 
-    @GetMapping("/fire")
+    @GetMapping("/run/rules/taxi")
     public ResponseEntity<Double> fireRules() {
         TaxiRide taxiRide =  new TaxiRide();
         taxiRide.setNightSurcharge(false);
