@@ -1,0 +1,22 @@
+package rules;
+global com.example.drlsruleengine.demo.Fare rideFare;
+import com.example.drlsruleengine.demo.TaxiRide;
+
+dialect  "mvel"
+
+rule "Calculate Taxi Fare - Scenario 1"
+    agenda-group "calculationtwo"
+    when
+        taxiRideInstance:TaxiRide(getNightSurcharge() == false && distanceInMile < 10);
+    then
+      	rideFare.setNightSurcharge(1.0);
+       	rideFare.setRideFare(11.0);
+end
+
+rule "trial scenario"
+    agenda-group "calculation"
+     when
+            taxiRideInstance:TaxiRide(getNightSurcharge() == false && distanceInMile < 10);
+        then
+           	rideFare.setRideFare(11.0);
+    end

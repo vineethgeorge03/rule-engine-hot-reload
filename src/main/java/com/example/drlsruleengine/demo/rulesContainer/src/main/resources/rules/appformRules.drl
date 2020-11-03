@@ -1,0 +1,23 @@
+package rules;
+import com.example.drlsruleengine.demo.ruleModels.Appform;
+
+dialect  "mvel"
+
+rule "loan amount, loan Asset value for CFB"
+    agenda-group "CFB"
+    salience 1
+     when
+            appFormInstance:Appform(getLoanAmount() > 3, getLoanAssetValue() > 4)
+        then
+            appFormInstance.setHasPassed(true);
+    end
+
+
+rule "loan amount, loan Asset value for for PSE"
+    agenda-group "PSE"
+    salience 1
+     when
+            appFormInstance:Appform(getLoanAmount() > 5, getLoanAssetValue() > 6)
+        then
+            appFormInstance.setHasPassed(true);
+    end
